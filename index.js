@@ -70,7 +70,8 @@ app.get('/userBookings/:email',async(req,res)=>{
 
 app.delete('/userBookings/:id',async(req,res)=>{
   const {id} = req.params
-  const result = await bookingCollection.deleteOne({_id:id})
+  console.log(id)
+  const result = await bookingCollection.deleteOne({ _id:id})
   res.send(result)
 })
 
