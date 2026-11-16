@@ -68,6 +68,11 @@ app.get('/userBookings/:email',async(req,res)=>{
   res.send(result)
 })
 
+app.delete('/userBookings/:id',async(req,res)=>{
+  const {id} = req.params
+  const result = await bookingCollection.deleteOne({_id:id})
+  res.send(result)
+})
 
 
 app.listen(PORT, () => {
